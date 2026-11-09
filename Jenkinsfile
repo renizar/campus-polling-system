@@ -50,7 +50,7 @@ pipeline {
                     cd /home/renizar/campus-polling-system
 
                     for i in 1 2 3 4 5 6 7 8 9 10; do
-                        if docker compose exec -T frontend wget -qO- http://localhost/api/votes > /dev/null 2>&1; then
+                        if docker compose exec -T frontend wget -qO- http://backend:5000/votes > /dev/null 2>&1; then
                             echo "Health check OK"
                             exit 0
                         fi
